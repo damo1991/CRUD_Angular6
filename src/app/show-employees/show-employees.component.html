@@ -1,0 +1,26 @@
+<h1>Employee List</h1>
+<div class="container">
+    <div class="row">
+<table class="table table-sm">  
+    <thead>  
+        <tr>  
+            <th scope="col">Employee ID</th>  
+            <th scope="col">FirstName</th>  
+            <th scope="col">LastName</th>  
+            <th scope="col">Email</th>            
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr scope="row" *ngFor="let e of employees;">  
+            <td>{{e.id}}</td>  
+            <td>{{e.first_name | uppercase}}</td>  
+            <td>{{e.last_name | lowercase}}</td>  
+            <td>{{e.email | lowercase }}</td>
+            <td><input type="button" (click)="editDetails(e)" class="btn btn-success" value="edit"/></td> 
+            <td><input type="button" (click)="deleteDetails(e.id)" class="btn btn-danger" value="delete"/></td>  
+        </tr>  
+    </tbody>  
+</table>
+<input type="button" (click)="addDetails()" class="btn btn-primary" value="Add Employee"/>  
+    </div>
+</div>

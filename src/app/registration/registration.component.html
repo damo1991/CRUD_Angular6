@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Register Employee</h1>
+    <form (ngSubmit)="onSubmit(form.value)" [formGroup]="form">
+        <div class="form-group">
+            <label for="id">Employee Id</label>
+            <input type="text" id="id" class="form-control" formControlName="id" />
+            <div [hidden]="form.controls['id'].valid || form.controls['id'].pristine" class="alert alert-danger">
+                Student ID is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" class="form-control" formControlName="first_name" />
+            <div [hidden]="form.controls['first_name'].valid || form.controls['first_name'].pristine" class="alert alert-danger">
+                First Name is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="id">Last Name</label>
+            <input type="text" id="last_name" class="form-control" formControlName="last_name" />
+            <div [hidden]="form.controls['last_name'].valid || form.controls['last_name'].pristine" class="alert alert-danger">
+                Last Name ID is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="id">Email Id</label>
+            <input type="text" id="email" class="form-control" formControlName="email" />
+            <div [hidden]="form.controls['email'].valid || form.controls['email'].pristine" class="alert alert-danger">
+                Student ID is required
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!form.valid">Submit</button>
+    </form>
+   
+</div>
